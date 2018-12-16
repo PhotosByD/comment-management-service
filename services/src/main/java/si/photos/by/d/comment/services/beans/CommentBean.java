@@ -2,8 +2,8 @@ package si.photos.by.d.comment.services.beans;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
-import si.photos.by.d.comment.services.configuration.AppProperties;
 import si.photos.by.d.comment.models.entities.Comment;
+import si.photos.by.d.comment.services.configuration.AppProperties;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
