@@ -19,10 +19,10 @@ kumuluzee:
         jndi-name: jdbc/CommentDS
   config:
     etcd:
-      hosts: http://192.168.99.100:2379
+      hosts: http://localhost:2379
   discovery:
     etcd:
-      hosts: http://192.168.99.100:2379
+      hosts: http://localhost:2379
   metrics:
     web-instrumentation:
       - name: comments-endpoint
