@@ -4,12 +4,12 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://localhost:8080
+    base-url: http://localhost:8083
     http:
-      port: 8080
+      port: 8083
   datasources:
     - jndi-name: jdbc/CommentDS
-      connection-url: jdbc:postgresql://192.168.99.100:5432/comment
+      connection-url: jdbc:postgresql://localhost:5432/comment
       username: dbuser
       password: postgres
       max-pool-size: 20
