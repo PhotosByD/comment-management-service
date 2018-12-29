@@ -9,9 +9,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: comment
   comment-service:
-    image: photosbyd/comment-service:0.6
+    image: photosbyd/comment-service:0.7
     ports:
-      - 8083:8083
+      - 8083:8080
     environment:
       KUMULUZEE_DATASOURCES0_CONNECTIONURL: jdbc:postgresql://postgres:5432/comment
       KUMULUZEE_CONFIG_ETCD_HOSTS: http://etcd:2379
