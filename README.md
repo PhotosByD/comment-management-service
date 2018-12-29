@@ -2,7 +2,7 @@
 
 ## Docker build locally
 docker build -t comment-service .
-docker run -d --name comment-service -p 8080:8080 comment-service
+docker run -d --name comment-service -p 8080:8083 comment-service
 
 ## Database 
 docker run -d --name pg-comments -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=comment -p 5434:5432 postgres:10.5
