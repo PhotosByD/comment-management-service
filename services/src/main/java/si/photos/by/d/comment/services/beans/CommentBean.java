@@ -61,6 +61,16 @@ public class CommentBean {
         return comment;
     }
 
+    /*public Comment getCommentByUserId(Integer userId) {
+        Comment comment = em.find(Comment.class, userId);
+
+        if (comment == null) {
+            throw new NotFoundException();
+        }
+
+        return comment;
+    }*/
+
     public Comment createComment(Comment comment) {
         try {
             beginTx();
