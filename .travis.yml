@@ -14,7 +14,7 @@ cache:
     - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=photosbyd/comment-service:0.7
+  - DOCKER_IMAGE=photosbyd/comment-service:0.8
 
 script:
   - mvn clean package -U
