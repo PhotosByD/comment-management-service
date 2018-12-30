@@ -33,6 +33,19 @@ public class CommentResource {
     }
 
     @GET
+    @Path("/user/{userId}")
+    public Response getCommentsForUser(@PathParam("userId") Integer userId) {
+        List<Comment> comments = commentBean.getCommentsForUser(userId);
+        return Response.ok(comments).build();
+    }
+    @GET
+    @Path("/photo/{photoId}")
+    public Response getCommentsForPhoto(@PathParam("photoId") Integer photoId) {
+        List<Comment> comments = commentBean.getCommentsForPhoto(photoId);
+        return Response.ok(comments).build();
+    }
+
+    @GET
     @Path("/filtered")
     public Response getCommentsFiltered() {
         List<Comment> comments;
@@ -55,7 +68,7 @@ public class CommentResource {
     }
 
     @POST
-    public Response createCustomer(Comment comment) {
+    public Response createComment(Comment comment) {
 
         if ( comment.getBody().isEmpty() || (comment.getPhotoId() == null) || (comment.getUserId() == null)) {
             return Response.status(Response.Status.BAD_REQUEST).build();
@@ -87,7 +100,7 @@ public class CommentResource {
 
     @DELETE
     @Path("{commentId}")
-    public Response deleteCustomer(@PathParam("commentId") Integer commentId) {
+    public Response deleteComment(@PathParam("commentId") Integer commentId) {
 
         boolean deleted = commentBean.deleteComment(commentId);
 

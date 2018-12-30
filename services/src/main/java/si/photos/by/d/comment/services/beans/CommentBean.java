@@ -37,6 +37,7 @@ public class CommentBean {
         TypedQuery<Comment> query = em.createNamedQuery("Comment.getAll", Comment.class);
         return query.getResultList();
     }
+
     public List<Comment> getCommentsFilter(UriInfo uriInfo) {
 
         QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery()).defaultOffset(0)
@@ -55,15 +56,19 @@ public class CommentBean {
         return comment;
     }
 
-    /*public Comment getCommentByUserId(Integer userId) {
-        Comment comment = em.find(Comment.class, userId);
+    public List<Comment> getCommentsForUser(Integer id) {
+        TypedQuery<Comment> query = em.createQuery("SELECT c FROM comment c WHERE c.userId = :id", Comment.class);
+        query.setParameter("id", id);
 
-        if (comment == null) {
-            throw new NotFoundException();
-        }
+        return query.getResultList();
+    }
 
-        return comment;
-    }*/
+    public List<Comment> getCommentsForPhoto(Integer id) {
+        TypedQuery<Comment> query = em.createQuery("SELECT c FROM comment c WHERE c.photoId = :id", Comment.class);
+        query.setParameter("id", id);
+
+        return query.getResultList();
+    }
 
     public Comment createComment(Comment comment) {
         try {
