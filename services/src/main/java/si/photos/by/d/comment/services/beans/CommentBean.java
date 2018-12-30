@@ -6,7 +6,7 @@ import si.photos.by.d.comment.models.entities.Comment;
 import si.photos.by.d.comment.services.configuration.AppProperties;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -17,15 +17,13 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 import java.util.logging.Logger;
 
-@RequestScoped
+@ApplicationScoped
 public class CommentBean {
     private Logger log = Logger.getLogger(CommentBean.class.getName());
 
     @Inject
     private EntityManager em;
 
-    @Inject
-    private AppProperties appProperties;
 
     private Client httpClient;
 
