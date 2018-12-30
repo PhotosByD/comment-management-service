@@ -6,6 +6,6 @@ WORKDIR /app
 
 ADD ./api/target/comment-api-1.0.0-SNAPSHOT.jar /app
 
-EXPOSE 8080
+EXPOSE 8083
 
 CMD java -jar comment-api-1.0.0-SNAPSHOT.jar

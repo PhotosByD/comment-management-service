@@ -7,6 +7,7 @@ import si.photos.by.d.comment.services.configuration.AppProperties;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -17,7 +18,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 import java.util.logging.Logger;
 
-@ApplicationScoped
+@RequestScoped
 public class CommentBean {
     private Logger log = Logger.getLogger(CommentBean.class.getName());
 
@@ -29,9 +30,7 @@ public class CommentBean {
 
     @PostConstruct
     private void init() {
-        // This here will connect to photo service and get me photos for comment
         httpClient = ClientBuilder.newClient();
-        //photoUrl = "http://localhost:8081"; // only for demonstration
     }
 
     public List<Comment> getComments() {

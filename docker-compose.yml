@@ -11,7 +11,7 @@ services:
   comment-service:
     image: photosbyd/comment-service:0.9
     ports:
-      - 8080:8083
+      - 8083:8083
     environment:
       KUMULUZEE_DATASOURCES0_CONNECTIONURL: jdbc:postgresql://postgres:5432/comment
       KUMULUZEE_CONFIG_ETCD_HOSTS: http://etcd:2379
