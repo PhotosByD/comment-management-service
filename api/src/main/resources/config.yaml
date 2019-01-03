@@ -17,8 +17,8 @@ kumuluzee:
     checks:
       data-source-health-check:
         jndi-name: jdbc/CommentDS
-      etcd-health-check:
-        connection-url: http://localhost:2379/health
+      disk-space-health-check:
+        threshold: 100000000
   config:
     etcd:
       hosts: http://localhost:2379
