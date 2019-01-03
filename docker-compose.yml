@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: comment
   comment-service:
-    image: photosbyd/comment-service:1.3
+    image: photosbyd/comment-service:1.4
     ports:
       - 8083:8083
     environment:
