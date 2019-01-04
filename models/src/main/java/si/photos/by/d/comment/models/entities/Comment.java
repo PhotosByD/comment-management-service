@@ -23,6 +23,8 @@ public class Comment {
     @Column(name = "comment_body")
     private String body;
 
+    @Transient
+    private String user;
 
     public Integer getId() {
         return id;
@@ -56,4 +58,11 @@ public class Comment {
         this.body = body;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }
