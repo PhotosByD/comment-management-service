@@ -13,7 +13,7 @@ spec:
         app: comment
     spec:
       containers:
-        - image: photosbyd/comment-service:1.4
+        - image: photosbyd/comment-service:1.5
           name: comment
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER
